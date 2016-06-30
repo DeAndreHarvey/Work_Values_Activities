@@ -1,0 +1,30 @@
+<div ng-controller="ShowCtrl">
+  <div class="container">
+    <h2>Congratulations {{user.name}}</h2>
+    <p>Feel free to print this page so you can revisit this at a later point in your career. You will be able to see if your values have changed over time.</p>
+    <div class="">
+      <h3>3 Most Important Values</h3>
+      <ul style="list-style-type:none">
+        <li ng-repeat='item in Finallist' >{{item.title}}</li>
+      </ul>
+    </div>
+    <div class="">
+      <h3>List of Most Important Values</h3>
+      <ul style="list-style-type:none">
+        <li ng-repeat='item in VIPlist' >{{item.title}}</li>
+      </ul>
+    </div>
+    <div class="">
+      <h3>List of Kinda Important Values</h3>
+      <ul style="list-style-type:none">
+        <li ng-repeat='item in KIPlist' >{{item.title}}</li>
+      </ul>
+    </div>
+    <div class="">
+      <h3>List of Non Important Values</h3>
+      <ul style="list-style-type:none">
+        <li ng-repeat='item in NIPlist' >{{item.title}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,123 @@
+
+<div ng-controller='FilterCtrl' class="container">
+  <div class="1stprompt">
+  <div class="container">
+    <div class="">
+      <h3>Now  Image if you will....</h3>
+      <p>You have been happy in your job for 2 years. you currently have all  of these values in your job. One day, your Boss comes to you and says that the company has hit a wall and in order to survive and avoid lay offs they ask that you give up 5 of your current values. </p>
+      <p>How do you feel?</p>
+      <p>Please decide which 5 values you are willing to sacrfice to remain in your job.</p>
+    </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div id="cart">
+               <h1 class="ui-widget-header" >Discard List</h1>
+              <div class="ui-widget-content">
+                  <ol data-drop="true" ng-model='Discard1' jqyoui-droppable="{multiple:true}">
+                      <li ng-repeat="item in Discard1 track by $index" ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="Discard1" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.title}}</li>
+                      <li class="placeholder" ng-hide="hideMe2()">Add your Values here</li>
+                  </ol>
+              </div>
+          </div>
+        </div>
+        <div id="products" class='col-md-4'  >
+          <h1 class="ui-widget-header">Your important Value List</h1>
+          <div id="catalog" class="nav">
+              <ul style="list-style-type:none" data-drop="true" ng-model='list1' jqyoui-droppable="{multiple:true}">
+                <div class="container">
+                <li class='thumbnail' ng-repeat='item in VIPlist' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="VIPlist" jqyoui-draggable="{index: {{$index}}, animate: true }">{{item.title}}</li>
+                </div>
+              </ul>
+          </div>
+        </div>
+        <div class="container">
+          <div class="col-xs-4">
+            <input id='filter1' class='btn btn-info btn-lg pull-right' type="button" ng-click='' value="Next">
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="2ndprompt" hidden>
+  <div class="container">
+    <div class="">
+      <h3>Five Years Down the Line</h3>
+      <p>You have been  happy in your job for 7 years now. you currently have all these values in your job. One day, your Boss comes to you and says thing have gotten even worse and that you now need to  give up 3 more of your current values. </p>
+      <p>How do you feel? Would you start looking for a new job?</p>
+      <p>Please decide which 3 values you are willing to sacrfice to remain in your job.</p>
+    </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div id="cart">
+               <h1 class="ui-widget-header" >Discard List</h1>
+              <div class="ui-widget-content">
+                  <ol data-drop="true" ng-model='Discard1' jqyoui-droppable="{multiple:true}">
+                      <li ng-repeat="item in Discard1 track by $index" ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="Discard1" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.title}}</li>
+                      <li class="placeholder" ng-hide="hideMe2()">Add your Values here</li>
+                  </ol>
+              </div>
+          </div>
+        </div>
+        <div id="products" class='col-md-4'  >
+          <h1 class="ui-widget-header">Your important Value List</h1>
+          <div id="catalog" class="nav">
+              <ul style="list-style-type:none" data-drop="true" ng-model='list1' jqyoui-droppable="{multiple:true}">
+                <div class="container">
+                <li class='thumbnail' ng-repeat='item in VIPlist' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="VIPlist" jqyoui-draggable="{index: {{$index}}, animate: true }">{{item.title}}</li>
+                </div>
+              </ul>
+          </div>
+        </div>
+        <div class="container">
+          <div class="col-xs-4">
+            <input id='filter2' class='btn btn-info btn-lg pull-right' type="button" ng-click='' value="Next">
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="3rdprompt" hidden>
+  <div class="container">
+    <div class="">
+      <h3>Evaluation</h3>
+      <p>You now are left with only 3 values. Through this exercise you have identified these 3 values as the most important values to you in your job. </p>
+      <p>Now you must ask yourself... do I have these values in my current job? Could this contribute to my happiness at work? If you do not have these values in your job, is it time to look for a new one? </p>
+      <p>I hope you enjoyed this activity and hopefully you received some insight into what your job values are.</p>
+      <p>Please press the next button for a summary of this activity. Thank you</p>
+    </div>
+      <div class="row">
+        <div id="products" class='col-md-4'  >
+          <h1 class="ui-widget-header">Your important Value List</h1>
+          <div id="catalog" class="nav">
+              <ul style="list-style-type:none" data-drop="true" ng-model='list1' jqyoui-droppable="{multiple:true}">
+                <div class="container">
+                <li class='thumbnail' ng-repeat='item in VIPlist' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="VIPlist" jqyoui-draggable="{index: {{$index}}, animate: true }">{{item.title}}</li>
+                </div>
+              </ul>
+          </div>
+        </div>
+        <div class="container">
+          <div class="col-xs-4">
+            <input id='filter2' class='btn btn-info btn-lg pull-right' type="button" ng-click='final()' value="Next">
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+<script type="text/javascript">
+$( document ).ready(function() {
+  $('#filter1').click(function () {
+    $('.1stprompt').hide('slow',function () {
+      $('.2ndprompt').show('slow');
+    });
+  });
+  $('#filter2').click(function () {
+    $('.2ndprompt').hide('slow',function () {
+      $('.3rdprompt').show('slow');
+    });
+  });
+
+
+});
+</script>
