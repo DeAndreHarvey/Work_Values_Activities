@@ -1,53 +1,85 @@
 <div ng-controller='PickCtrl'>
-  <div class="jumbotron">
+  <div class="">
     <div class="container">
       <h1>Welcome {{user.name}}</h1>
-      <h3>Lets Set your Values</h3>
-      <p>We will start by orginzing our list of values into three diffent Categories. </p>
-      <p>Please drag and drop each value into the category based on on the importance that value holds to you.</p>
-      <p>Once you have fininshed please press the next button to continue.</p>
+      <h3 style="color: maroon">Directions:</h3>
+      <p>Below you will find a list of 30 of the most common work-life values. Some of these values will be very important to you, some will be less important, and some might not be important at all. There are no wrong answers here! Simply reflect on each of these values and rate them on the bases of importance in your life.<strong> Your rating should reflect your values as applied to a career/work setting and not necessarily your home life.</strong> For example, if spirituality is very important to you in your home life, but not important at all in your work-life, for this activity, you would rate spirituality as not important.</p>
+      <p>When you get to the end, you will have an opportunity to add any values you didn’t see reflected in the list. This is a very important step!</p>
+      <p style="text-align:center"><strong>Drag and drop each of the values into a category below:</strong><br>
+        (try not to over think this step, trust your initial instinct)</p>
+      <div class="">
+      </div>
     </div>
-      <div class="container">
-        <div class="col-xs-4">
-          <input class='btn btn-info btn-lg pull-right' type="button" ng-click='setList()' value="Next">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+
+          <div class="panel panel-danger">
+            <div class="panel-heading">
+              <h1 class="panel-title">Work-Life Values</h1>
+            </div>
+            <div class="panel-body">
+            <div  class="nav">
+              <ul style="list-style-type:none" data-drop="true" ng-model='list1' jqyoui-droppable="{multiple:true}">
+
+                  <li class='thumbnail' ng-repeat='item in list1' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list1" jqyoui-draggable="{index: {{$index}}, animate: true }"><u>{{item.title}}</u><br>{{item.description}}</li>
+
+              </ul>
+            </div>
+          </div>
+          </div>
+
+      </div>
+      <div class="col-md-3">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h1 class="panel-title">Very Important</h1>
+          </div>
+            <div class="panel-body">
+              <ol data-drop="true" ng-model='list2' jqyoui-droppable="{multiple:true}">
+                  <li ng-repeat="item in list2 track by $index" ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list2" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.title}}</li>
+                  <li class="placeholder" ng-hide="hideMe2()">Add your Values here</li>
+              </ol>
+            </div>
         </div>
       </div>
-  </div>
-  <div id="products"  >
-    <h1 class="well sidebar-nav">List of Values</h1>
-    <div id="catalog" class="nav">
-        <ul style="list-style-type:none" data-drop="true" ng-model='list1' jqyoui-droppable="{multiple:true}">
-          <div class="container">
-          <li class='thumbnail' ng-repeat='item in list1' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list1" jqyoui-draggable="{index: {{$index}}, animate: true }">{{item.title}}</li>
+      <div class="col-md-3">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h1 class="panel-title">Somewhat Important</h1>
           </div>
-        </ul>
-    </div>
-  </div>
-  <div id="cart">
-      <h1 class="ui-widget-header" >Very Important</h1>
-      <div class="ui-widget-content">
-          <ol data-drop="true" ng-model='list2' jqyoui-droppable="{multiple:true}">
-              <li ng-repeat="item in list2 track by $index" ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list2" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.title}}</li>
-              <li class="placeholder" ng-hide="hideMe2()">Add your Values here</li>
-          </ol>
+            <div class="panel-body">
+              <ol data-drop="true" ng-model='list3' jqyoui-droppable="{multiple:true}">
+                  <li ng-repeat="item in list3 track by $index" ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list3" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.title}}</li>
+                  <li class="placeholder" ng-hide="hideMe3()">Add your Values here</li>
+              </ol>
+            </div>
+        </div>
       </div>
-  </div>
-  <div id="cart">
-      <h1 class="ui-widget-header">Kinda Important</h1>
-      <div class="ui-widget-content">
-          <ol data-drop="true" ng-model='list3' jqyoui-droppable="{multiple:true}">
-              <li ng-repeat="item in list3 track by $index" ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list3" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.title}}</li>
-              <li class="placeholder" ng-hide="hideMe3()">Add your Values here</li>
-          </ol>
+      <div class="col-md-3">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h1 class="panel-title">Not Very Important</h1>
+          </div>
+            <div class="panel-body">
+              <ol data-drop="true" ng-model='list4' jqyoui-droppable="{multiple:true}">
+                  <li ng-repeat="item in list4 track by $index" ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list4" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.title}}</li>
+                  <li class="placeholder" ng-hide="hideMe4()">Add your Values here</li>
+              </ol>
+            </div>
+        </div>
       </div>
-  </div>
-  <div id="cart">
-      <h1 class="ui-widget-header">Not Important</h1>
-      <div class="ui-widget-content">
-          <ol data-drop="true" ng-model='list4' jqyoui-droppable="{multiple:true}">
-              <li ng-repeat="item in list4 track by $index" ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list4" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.title}}</li>
-              <li class="placeholder" ng-hide="hideMe4()">Add your Values here</li>
-          </ol>
-      </div>
-  </div>
+
+</div>
+<div class="jumbotron pull-left" >
+  <p>Add a Value</p>
+  <input type="text" ng-model='new_Value.title' placeholder="Title"><br>
+  <input type="text" ng-model='new_Value.description' placeholder="Description"><br>
+  <input class="btn btn-danger " type='button' ng-click='newValue()'  value='Add Value'>
+</div>
+<div class="">
+  <input class='btn btn-danger  pull-right' type="button" ng-click='setList()' value="Next">
+</div>
+</div>
 </div>

@@ -3,36 +3,95 @@
   <div class="1stprompt">
   <div class="container">
     <div class="">
-      <h3>Now  Image if you will....</h3>
-      <p>You have been happy in your job for 2 years. you currently have all  of these values in your job. One day, your Boss comes to you and says that the company has hit a wall and in order to survive and avoid lay offs they ask that you give up 5 of your current values. </p>
-      <p>How do you feel?</p>
-      <p>Please decide which 5 values you are willing to sacrfice to remain in your job.</p>
+      <h3>Fantastic {{user.name}},</h3>
+      <p>
+        This is where things start to get exciting! Now that you have done the hard work of sorting your values, it’s time to create your dream job! Imagine if you will:
+      </p>
+      <ul  style="list-style-type:none">
+        <li>&#x2713; You are in your dream job!</li>
+        <li>&#x2713; You have everything you want and more!</li>
+        <li>&#x2713; As far as your career is concerned, your life is perfect!</li>
+      </ul>
+      <p>In this amazing position, you get to take 15 values with you! Based on your ratings below, create your dream job. I recommend starting with the values in your very important column and then adding and subtracting from there.</p>
+      <p style="text-align:center"><strong>Drag and drop 15 values to create your dream job!</strong><br>
+        (The order is not important!)</p>
     </div>
       <div class="row">
-        <div class="col-md-4">
-          <div id="cart">
-               <h1 class="ui-widget-header" >Discard List</h1>
-              <div class="ui-widget-content">
-                  <ol data-drop="true" ng-model='Discard1' jqyoui-droppable="{multiple:true}">
-                      <li ng-repeat="item in Discard1 track by $index" ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="Discard1" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.title}}</li>
-                      <li class="placeholder" ng-hide="hideMe2()">Add your Values here</li>
-                  </ol>
+        <div class="col-md-2">
+
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <h1 class="panel-title">Very <br> Important</h1>
               </div>
-          </div>
+              <div class="panel-body">
+              <div  class="nav">
+                <ul style="list-style-type:none" data-drop="true" ng-model='VIPlist' jqyoui-droppable="{multiple:true}">
+
+                    <li  ng-repeat='item in VIPlist' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="VIPlist" jqyoui-draggable="{index: {{$index}}, animate: true }">{{item.title}}</li>
+
+                </ul>
+              </div>
+            </div>
+            </div>
+
         </div>
-        <div id="products" class='col-md-4'  >
-          <h1 class="ui-widget-header">Your important Value List</h1>
-          <div id="catalog" class="nav">
-              <ul style="list-style-type:none" data-drop="true" ng-model='list1' jqyoui-droppable="{multiple:true}">
-                <div class="container">
-                <li class='thumbnail' ng-repeat='item in VIPlist' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="VIPlist" jqyoui-draggable="{index: {{$index}}, animate: true }">{{item.title}}</li>
-                </div>
-              </ul>
-          </div>
+        <div class="col-md-2">
+
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <h1 class="panel-title">Somewhat Important</h1>
+              </div>
+              <div class="panel-body">
+              <div  class="nav">
+                <ul style="list-style-type:none" data-drop="true" ng-model='KIPlist' jqyoui-droppable="{multiple:true}">
+
+                    <li  ng-repeat='item in KIPlist' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="KIPlist" jqyoui-draggable="{index: {{$index}}, animate: true }">{{item.title}}</li>
+
+                </ul>
+              </div>
+            </div>
+            </div>
+
+        </div>
+        <div class="col-md-2">
+
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <h1 class="panel-title">Not Very Important</h1>
+              </div>
+              <div class="panel-body">
+              <div  class="nav">
+                <ul style="list-style-type:none" data-drop="true" ng-model='NIPlist' jqyoui-droppable="{multiple:true}">
+
+                    <li  ng-repeat='item in NIPlist' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="NIPlist" jqyoui-draggable="{index: {{$index}}, animate: true }">{{item.title}}</li>
+
+                </ul>
+              </div>
+            </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <h1 class="panel-title">My Dream Job</h1>
+              </div>
+              <div class="panel-body">
+              <div  class="">
+                <ol  data-drop="true" ng-model='Dreamlist' jqyoui-droppable="{multiple:true}">
+
+                    <li class='' ng-repeat='item in Dreamlist' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="Dreamlist" jqyoui-draggable="{index: {{$index}}, animate: true }"><strong>{{item.title}}</strong><br>{{item.description}}</li>
+                    <li class="placeholder" ng-hide="hideMe2()">Add your 15 Values here</li>
+                </ol>
+              </div>
+            </div>
+            </div>
+
         </div>
         <div class="container">
-          <div class="col-xs-4">
-            <input id='filter1' class='btn btn-info btn-lg pull-right' type="button" ng-click='' value="Next">
+          <div class="">
+            <input id='filter1' class='btn btn-danger  pull-right' type="button" ng-click='' value="Next">
           </div>
         </div>
       </div>
@@ -41,65 +100,220 @@
 <div class="2ndprompt" hidden>
   <div class="container">
     <div class="">
-      <h3>Five Years Down the Line</h3>
-      <p>You have been  happy in your job for 7 years now. you currently have all these values in your job. One day, your Boss comes to you and says thing have gotten even worse and that you now need to  give up 3 more of your current values. </p>
-      <p>How do you feel? Would you start looking for a new job?</p>
-      <p>Please decide which 3 values you are willing to sacrfice to remain in your job.</p>
+      <h3>Congratulations! Success looks good on you {{user.name}}</h3>
+      <p>Take a moment to reflect on this amazing opportunity you have come across. Literally, close your eyes and let it sink in. Visualize a career that includes all of the following:</p>
     </div>
       <div class="row">
         <div class="col-md-4">
-          <div id="cart">
-               <h1 class="ui-widget-header" >Discard List</h1>
-              <div class="ui-widget-content">
-                  <ol data-drop="true" ng-model='Discard1' jqyoui-droppable="{multiple:true}">
-                      <li ng-repeat="item in Discard1 track by $index" ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="Discard1" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.title}}</li>
-                      <li class="placeholder" ng-hide="hideMe2()">Add your Values here</li>
-                  </ol>
-              </div>
+
+        </div>
+        <div class="col-md-4">
+
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h1 class="panel-title">My Dream Job</h1>
+          </div>
+          <div class="panel-body">
+          <div  class="nav">
+            <ol  data-drop="true" ng-model='Dreamlist' jqyoui-droppable="{multiple:true}">
+
+                <li class='' ng-repeat='item in Dreamlist' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="Dreamlist" jqyoui-draggable="{index: {{$index}}, animate: true }"><strong>{{item.title}}</strong><br>{{item.description}}</li>
+                <li class="placeholder" ng-hide="hideMe2()">Add your 15 Values here</li>
+            </ol>
           </div>
         </div>
-        <div id="products" class='col-md-4'  >
-          <h1 class="ui-widget-header">Your important Value List</h1>
-          <div id="catalog" class="nav">
-              <ul style="list-style-type:none" data-drop="true" ng-model='list1' jqyoui-droppable="{multiple:true}">
-                <div class="container">
-                <li class='thumbnail' ng-repeat='item in VIPlist' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="VIPlist" jqyoui-draggable="{index: {{$index}}, animate: true }">{{item.title}}</li>
-                </div>
-              </ul>
-          </div>
-        </div>
-        <div class="container">
-          <div class="col-xs-4">
-            <input id='filter2' class='btn btn-info btn-lg pull-right' type="button" ng-click='' value="Next">
-          </div>
         </div>
       </div>
+          <div class="col-md-4">
+          </div>
+      </div>
+  </div>
+  <div class="container">
+    <h3>QUESTIONS TO CONSIDER:</h3>
+    <ul>
+      <li>What are you doing that matters? What kind of impact are you having on the world?</li>
+      <li>How do you feel going to work everyday?</li>
+      <li>Are you happy?</li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="">
+      <input id='filter2' class='btn btn-danger  pull-right' type="button" ng-click='' value="Next">
+    </div>
   </div>
 </div>
 <div class="3rdprompt" hidden>
   <div class="container">
     <div class="">
-      <h3>Evaluation</h3>
-      <p>You now are left with only 3 values. Through this exercise you have identified these 3 values as the most important values to you in your job. </p>
-      <p>Now you must ask yourself... do I have these values in my current job? Could this contribute to my happiness at work? If you do not have these values in your job, is it time to look for a new one? </p>
-      <p>I hope you enjoyed this activity and hopefully you received some insight into what your job values are.</p>
-      <p>Please press the next button for a summary of this activity. Thank you</p>
+      <h3>{{user.name}},</h3>
+      <p>I hope you have enjoyed the feeling of having the perfect work-life balance. However, life isn’t always perfect and <strong>we are often asked to sacrifice our values for one reason or another.</strong> </p>
+      <p>In the next phase of this activity, I want you to imagine you have been on your job for 4 years and you have done exceedingly well. Unfortunately, the company has run into some challenges and needs to make some cuts. In order to keep your position, you will have to <strong>give up 5 of your values.</strong></p>
+      <p style="text-align:center"><strong>Drag and drop 5 values you are willing to sacrifice.</strong><br>
+        (The order is not important!)</p>
     </div>
       <div class="row">
-        <div id="products" class='col-md-4'  >
-          <h1 class="ui-widget-header">Your important Value List</h1>
-          <div id="catalog" class="nav">
-              <ul style="list-style-type:none" data-drop="true" ng-model='list1' jqyoui-droppable="{multiple:true}">
-                <div class="container">
-                <li class='thumbnail' ng-repeat='item in VIPlist' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="VIPlist" jqyoui-draggable="{index: {{$index}}, animate: true }">{{item.title}}</li>
-                </div>
-              </ul>
+        <div class="col-md-4">
+
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <h1 class="panel-title">Discarded Values</h1>
+              </div>
+              <div class="panel-body">
+              <div  class="nav">
+                <ol  data-drop="true" ng-model='Discard1' jqyoui-droppable="{multiple:true}">
+                    <li class='' ng-repeat='item in Discard1' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="Discard1" jqyoui-draggable="{index: {{$index}}, animate: true }"><strong>{{item.title}}</strong><br>{{item.description}}</li>
+                    <li class="placeholder" ng-hide="hideMe3()">Add your discarded Values here</li>
+                </ol>
+              </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h1 class="panel-title">My Dream Job</h1>
+          </div>
+          <div class="panel-body">
+          <div  class="nav">
+            <ol  data-drop="true" ng-model='Dreamlist' jqyoui-droppable="{multiple:true}">
+
+                <li class='' ng-repeat='item in Dreamlist' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="Dreamlist" jqyoui-draggable="{index: {{$index}}, animate: true }"><strong>{{item.title}}</strong><br>{{item.description}}</li>
+                <li class="placeholder" ng-hide="hideMe2()">Add your 15 Values here</li>
+            </ol>
           </div>
         </div>
-        <div class="container">
-          <div class="col-xs-4">
-            <input id='filter2' class='btn btn-info btn-lg pull-right' type="button" ng-click='final()' value="Next">
+        </div>
+      </div>
+      </div>
+      <div class="container">
+        <h3>QUESTIONS TO CONSIDER:</h3>
+        <ul>
+          <li>How does this change affect your overall level of happiness?</li>
+          <li>How do you feel going to work everyday?</li>
+          <li>Do you still love what you do?</li>
+        </ul>
+      </div>
+      <div class="container">
+        <div class="">
+          <input id='filter3' class='btn btn-danger  pull-right' type="button" ng-click='' value="Next">
+        </div>
+      </div>
+  </div>
+</div>
+<div class="4thprompt" hidden>
+  <div class="container">
+    <div class="">
+      <h3>Fast forward another 2 years {{user.name}},</h3>
+      <p>This company was finally starting to bounce back when the economy took a turn for the worse. If it’s not one thing, it’s another! I was hoping to be able to give back your discarded values, but instead, now I have to ask you to make another sacrifice – to give up 5 more values! As soon as things get better, we will make this right again!</p>
+      <p style="text-align:center"><strong>Drag and drop 5 more values you are willing to sacrifice.</strong><br>
+        (The order is not important!)</p>
+    </div>
+      <div class="row">
+        <div class="col-md-4">
+
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <h1 class="panel-title">Discarded Values</h1>
+              </div>
+              <div class="panel-body">
+              <div  class="nav">
+                <ol  data-drop="true" ng-model='Discard2' jqyoui-droppable="{multiple:true}">
+                    <li class='' ng-repeat='item in Discard2' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="Discard2" jqyoui-draggable="{index: {{$index}}, animate: true }"><strong>{{item.title}}</strong><br>{{item.description}}</li>
+                    <li class="placeholder" ng-hide="hideMe4()">Add your discarded Values here</li>
+                </ol>
+              </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h1 class="panel-title">My Dream Job</h1>
           </div>
+          <div class="panel-body">
+          <div  class="nav">
+            <ol  data-drop="true" ng-model='Dreamlist' jqyoui-droppable="{multiple:true}">
+
+                <li class='' ng-repeat='item in Dreamlist' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="Dreamlist" jqyoui-draggable="{index: {{$index}}, animate: true }"><strong>{{item.title}}</strong><br>{{item.description}}</li>
+                <li class="placeholder" ng-hide="hideMe2()">Add your 15 Values here</li>
+            </ol>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+      <div class="container">
+        <h3>QUESTIONS TO CONSIDER:</h3>
+        <ul>
+          <li>Are you finding this cut harder than the first cut? Why or why not?</li>
+          <li>Would you feel differently if the sacrifice was temporary vs. permanent?</li>
+          <li>How long would you be willing to sacrifice your values?</li>
+          <li>Is this still a “dream job?” Are you happy? Why or why not?</li>
+        </ul>
+      </div>
+      <div class="container">
+        <div class="">
+          <input id='filter4' class='btn btn-danger  pull-right' type="button" ng-click='' value="Next">
+        </div>
+      </div>
+  </div>
+</div>
+<div class="5thprompt" hidden>
+  <div class="container">
+    <div class="">
+      <h3>{{user.name}},</h3>
+      <p>You have given up a lot over the past six years and you have reached the final stage of this activity. Just because I want to push you to really really narrow down your values, I need you to imagine what it would be like to give up 2 more! Many people find this step the hardest of all, but what if you really had to sacrifice again? In reality, we do this all the time without thinking about it. Think carefully and select 2 more values to sacrifice to complete this activity.</p>
+      <p style="text-align:center"><strong>Drag and drop 2 values you are willing to sacrifice.</strong><br>
+        (The order is not important!)</p>
+    </div>
+      <div class="row">
+        <div class="col-md-4">
+
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <h1 class="panel-title">Discarded Values</h1>
+              </div>
+              <div class="panel-body">
+              <div  class="nav">
+                <ol  data-drop="true" ng-model='Discard3' jqyoui-droppable="{multiple:true}">
+                    <li class='' ng-repeat='item in Discard3' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="Discard3" jqyoui-draggable="{index: {{$index}}, animate: true }"><strong>{{item.title}}</strong><br>{{item.description}}</li>
+                    <li class="placeholder" ng-hide="hideMe5()">Add your discarded Values here</li>
+                </ol>
+              </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h1 class="panel-title">Top Values</h1>
+          </div>
+          <div class="panel-body">
+          <div  class="nav">
+            <ol  data-drop="true" ng-model='Dreamlist' jqyoui-droppable="{multiple:true}">
+
+                <li class='' ng-repeat='item in Dreamlist' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="Dreamlist" jqyoui-draggable="{index: {{$index}}, animate: true }"><strong>{{item.title}}</strong><br>{{item.description}}</li>
+                <li class="placeholder" ng-hide="hideMe2()">Add your 15 Values here</li>
+            </ol>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+      <div class="container">
+        <h3>QUESTIONS TO CONSIDER:</h3>
+        <ul>
+          <li>How satisfied are you with your top 3 values? Is it enough?</li>
+          <li>Let’s think about real life. Are any of your most important values reflected in your current circumstance?</li>
+          <li>What actions can you take to increase the presence of your values in your current role?</li>
+          <li>At which point throughout this activity would you have started looking for a new position?</li>
+          <li>What did you learn about yourself?</li>
+          <li>In thinking about your entrepreneurial goals, how can you put a system in place to ensure you don’t loose sight of your values?</li>
+        </ul>
+      </div>
+      <div class="container">
+        <div class="">
+          <input  class='btn btn-danger  pull-right' type="button" ng-click='final()' value="Next">
         </div>
       </div>
   </div>
@@ -117,6 +331,19 @@ $( document ).ready(function() {
       $('.3rdprompt').show('slow');
     });
   });
+
+  $('#filter3').click(function () {
+    $('.3rdprompt').hide('slow',function () {
+      $('.4thprompt').show('slow');
+    });
+  });
+
+  $('#filter4').click(function () {
+    $('.4thprompt').hide('slow',function () {
+      $('.5thprompt').show('slow');
+    });
+  });
+
 
 
 });

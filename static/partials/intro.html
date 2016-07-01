@@ -1,8 +1,55 @@
 <div  ng-controller='introCtrl' class="container">
-  <div class="jumbotron">
-    <h1>Welcome to the Value Card Activity</h1>
-    <p>Lets get Started by entering your name</p>
+  <div style="text-align:center;">
+  <img style='height:25%; width:25%; ' src="logo2 (color).png" alt="logo" />
+</div>
+  <div class="first" hidden>
+    <div class="">
+      <h1 style="color:maroon"> Work-Life Values Clarity Exercise</h1>
+      <ul style="list-style-type:none">
+        <li>&#9633; Are you someone who just knows you are destined for greatness?</li>
+        <li>&#9633; Do you have dreams of taking over the world, but most days have no idea what that actually means? ​</li>
+        <li>&#9633; Do you sometimes feel overwhelmed by all of your ideas or perhaps lost wondering exactly how you will make your mark on this world?</li>
+        <li>&#9633; Does the idea of never figuring it out, getting lost in a routine, and living an average life terrify you?</li>
+      </ul>
+    </div>
+    <div class="">
+      <p>
+        Don’t worry, you truly are <strong style="color:maroon">Destined for Greatness!</strong> However, while some of us are blessed with knowing our purpose in life from a very young age (you know, the ones who have always dreamed of being a pediatrician or a veterinarian), most of us will continue to search for and redefine our purpose throughout our lifetime.
+      </p>
+      <p>
+        I created this activity to help make sure that your journey is meaningful. You don’t have to blindly jump from career to career hoping to find fulfilment. There is actually a formula to winning at life and it starts with knowing what you value most and aligning it with your choices.
+      </p>
+      <p>
+        As you work your way through this activity, take time to stop and think about the questions posed and how they apply to your current work- life situation. If you put in the time to work through the exercise, It is my sincere hope you will gain clarity in knowing when you have found your niche and when you need to move on.
+      </p>
+      <pre class="pull-right">
+        -Yours Truly,
+          Dr.Tai
+      </pre>
+      <input  id='start'  class="btn btn-danger btn-lg" type='button'  role="button" value='Click to Start'>
+    </div>
+    <p>More from Dr. Tai online at <a href="http://tlc-consultation.org">tlc-consultation.org</a></p>
+  </div>
+
+
+
+  <div  id='second'class="jumbotron" hidden>
+    <p>Let's get started by creating an account</p>
     <input type="text" ng-model='user.name' placeholder="Name"><br>
-    <input class="btn btn-primary btn-lg" type='button' ng-click='start()' role="button" value='Start &raquo;'>
+    <input type="text" ng-model='user.email' placeholder="Email"><br>
+    <input class="btn btn-danger btn-lg" type='button' ng-click='start()' role="button" value='Start &raquo;'>
   </div>
 </div>
+<script type="text/javascript">
+$( document ).ready(function() {
+  $('.first').slideDown(4000);
+
+  $('#start').click(function () {
+    $('.first').hide('slow',function () {
+      $('#second').show('slow');
+    });
+  });
+
+
+});
+</script>

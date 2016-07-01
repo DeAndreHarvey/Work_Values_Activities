@@ -1,30 +1,92 @@
 <div ng-controller="ShowCtrl">
   <div class="container">
-    <h2>Congratulations {{user.name}}</h2>
-    <p>Feel free to print this page so you can revisit this at a later point in your career. You will be able to see if your values have changed over time.</p>
-    <div class="">
-      <h3>3 Most Important Values</h3>
-      <ul style="list-style-type:none">
-        <li ng-repeat='item in Finallist' >{{item.title}}</li>
-      </ul>
-    </div>
-    <div class="">
-      <h3>List of Most Important Values</h3>
-      <ul style="list-style-type:none">
-        <li ng-repeat='item in VIPlist' >{{item.title}}</li>
-      </ul>
-    </div>
-    <div class="">
-      <h3>List of Kinda Important Values</h3>
-      <ul style="list-style-type:none">
-        <li ng-repeat='item in KIPlist' >{{item.title}}</li>
-      </ul>
-    </div>
-    <div class="">
-      <h3>List of Non Important Values</h3>
-      <ul style="list-style-type:none">
-        <li ng-repeat='item in NIPlist' >{{item.title}}</li>
-      </ul>
-    </div>
+    <div style="text-align:center;">
+    <img style='height:25%; width:25%; ' src="logo2 (color).png" alt="logo" />
   </div>
+  <div class="container">
+    <div class="">
+      <h1 style="color:maroon; text-align:center;">Work-Life Values Clarity Exercise <br> Summary</h1>
+    </div>
+      <h3>Thank you {{user.name}}</h3>
+      <h3>Please see your summary report below. Refer back to it as you are making career related decisions and consider repeating this activity regularly as values change over time.</h3>
+      <div class="row">
+        <div class="col-md-5">
+
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <h1 class="panel-title">Top 3 Values</h1>
+              </div>
+              <div class="panel-body">
+              <div  class="nav">
+                <ol>
+                    <li class='' ng-repeat='item in Finallist'  ><strong>{{item.title}}</strong><br>{{item.description}}</li>
+
+                </ol>
+              </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h1 class="panel-title">Round 3 Sacrifice</h1>
+          </div>
+          <div class="panel-body">
+          <div  class="nav">
+            <ol>
+                <li class='' ng-repeat='item in Round3' ng-show="item.title" ><strong>{{item.title}}</strong><br>{{item.description}}</li>
+            </ol>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <h1 class="panel-title">Round 2 Sacrifice</h1>
+              </div>
+              <div class="panel-body">
+              <div  class="nav">
+                <ol>
+                    <li class='' ng-repeat='item in Round2' ><strong>{{item.title}}</strong><br>{{item.description}}</li>
+                </ol>
+              </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h1 class="panel-title">Round 1 Sacrifice</h1>
+          </div>
+          <div class="panel-body">
+          <div  class="nav">
+            <ol>
+                <li class='' ng-repeat='item in Round1' ><strong>{{item.title}}</strong><br>{{item.description}}</li>
+            </ol>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+      <div class="container">
+        <h3>What did you think of this activity?</h3>
+        <h3>Share your thoughts with me online!</h3>
+          <div class="container">
+            <h3 style="color:maroon; "><b>#WorkLifeValues</b></h3>
+            <h3 style="color:maroon; ">Instagram @tlc_consultation</h3>
+            <h3 style="color:maroon; ">Twitter @drtlcaldwell</h3>
+          </div>
+          <h3>More from Dr. Tai online at <a href="http://tlc-consultation.org">tlc-consultation.org</h3>
+      </div>
+  </div>
+  <button  class="btn btn-primary pull-right"onclick="printPage()">Print this page</button>
 </div>
+<script>
+  function printPage() {
+    window.print();
+  }
+</script>
