@@ -37,7 +37,7 @@
             <h1 class="panel-title">Very Important</h1>
           </div>
             <div class="panel-body">
-              <ol data-drop="true" ng-model='list2' jqyoui-droppable="{multiple:true}" jqyoui-droppable style='height:50px;'>
+              <ol data-drop="true" ng-model='list2' jqyoui-droppable="{multiple:true}" jqyoui-droppable style='height:400px;'>
                   <li ng-repeat="item in list2 track by $index" ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list2" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.title}}</li>
                   <li class="placeholder" ng-hide="hideMe2()">Add your Values here</li>
               </ol>
@@ -50,7 +50,7 @@
             <h1 class="panel-title">Somewhat Important</h1>
           </div>
             <div class="panel-body">
-              <ol data-drop="true" ng-model='list3' jqyoui-droppable="{multiple:true}" jqyoui-droppable style='height:50px;'>
+              <ol data-drop="true" ng-model='list3' jqyoui-droppable="{multiple:true}" jqyoui-droppable style='height:400px;'>
                   <li ng-repeat="item in list3 track by $index" ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list3" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.title}}</li>
                   <li class="placeholder" ng-hide="hideMe3()">Add your Values here</li>
               </ol>
@@ -63,8 +63,8 @@
             <h1 class="panel-title">Not Very Important</h1>
           </div>
             <div class="panel-body">
-              <ol data-drop="true" ng-model='list4' jqyoui-droppable="{multiple:true}" jqyoui-droppable style='height:50px;'>
-                  <li ng-repeat="item in list4 track by $index" ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list4" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.title}}</li>
+              <ol data-drop="true" ng-model='list4' jqyoui-droppable="{multiple:true}" jqyoui-droppable style='height:400px;'>
+                  <li ng-repeat="item in list4 track by $index" ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list4" jqyoui-draggable="{index: {{$index}},animate:true}" >{{item.title}}</li>
                   <li class="placeholder" ng-hide="hideMe4()">Add your Values here</li>
               </ol>
             </div>
